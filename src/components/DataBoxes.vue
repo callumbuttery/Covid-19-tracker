@@ -5,10 +5,12 @@
             <h3 class="text-3xl text-blue-500 font-bold mb-4">Cases</h3>
 
             <div class="text-3xl mb-2 mt-10">
-                <span class="font-bold text-black">Total Cases: {{numbersWithCommas(stats.TotalConfirmed)}}</span>
+                <span class="text-black">Total Cases: </span>
+                <span class="text-black">{{numbersWithCommas(stats.TotalConfirmed)}}</span>
             </div>
             <div class="mb-4">
-                <span class="font-bold text-red-500">New Cases: {{numbersWithCommas(stats.NewConfirmed)}}</span>
+                <span class="text-red-500">New Cases: </span>
+                <span class="text-red-500">{{numbersWithCommas(stats.NewConfirmed)}}</span>
             </div>
         </div>
 
@@ -17,10 +19,12 @@
             <h3 class="text-3xl text-blue-500 font-bold mb-4">Deaths</h3>
 
             <div class="text-3xl mb-2 mt-10">
-                <span class="font-bold text-black">Total Deaths: {{numbersWithCommas(stats.TotalDeaths)}}</span>
+                <span class="text-black">Total Deaths: </span>
+                <span class="text-black">{{numbersWithCommas(stats.TotalDeaths)}}</span>
             </div>
             <div class="mb-4">
-                <span class="font-bold text-red-500">New Deaths: {{numbersWithCommas(stats.NewDeaths)}}</span>
+                <span class="text-red-500">New Deaths: </span>
+                <span class="text-red-500">{{numbersWithCommas(stats.NewDeaths)}}</span>
             </div>
         </div>
     </div>
@@ -31,13 +35,16 @@
             <h3 class="text-3xl text-black-500 font-bold mb-4">Statistics</h3>
 
             <div class="text-3xl mb-2 mt-10">
-                <span class="font-bold text-black">Fatality rate: {{percentageStats.deathRounded}}</span>
+                <span class="text-black">Fatality rate: </span>
+                <span class="font-bold text-black">{{percentageStats.deathRounded}}</span>
             </div>
             <div class="text-2xl mb-2 mt-2">
-                <span class="font-bold text-black">Population infected at some stage: {{percentageStats.totalInfected}}</span>
+                <span class="text-black">Population infected at some stage: </span>
+                <span class="font-bold text-black">{{percentageStats.totalInfected}}</span>
             </div>
             <div class="text-2xl mb-2 mt-2">
-                <span class="font-bold text-black">Population currently infected: {{percentageStats.currentlyInfected}}</span>
+                <span class="text-black">Population currently infected: </span>
+                <span class="font-bold text-black">{{percentageStats.currentlyInfected}}</span>
             </div>
         </div>
     </div>
