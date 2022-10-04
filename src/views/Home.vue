@@ -1,5 +1,5 @@
 <template>
-  <main v-if="!loading">
+  <main v-if="!loading" class="h-full mb-10">
     <DataTitle :text="title" :dataDate="dataDate"/>
     <DataBoxes :stats="stats"/>
   </main>

@@ -25,13 +25,19 @@
         </div>
     </div>
 
-    <div class="grid md:grid-cols-1 gap-4 mt-10 w-96 mx-auto">
+    <div class="grid md:grid-cols-1 gap-4 mt-10 mx-auto">
         <!-- Box 1  -->
         <div class="shadow-md bg-gray-200 p-10 text-center">
             <h3 class="text-3xl text-black-500 font-bold mb-4">Statistics</h3>
 
             <div class="text-3xl mb-2 mt-10">
-                <span class="font-bold text-black">Fatality rate: {{percentageStats}}</span>
+                <span class="font-bold text-black">Fatality rate: {{percentageStats.deathRounded}}</span>
+            </div>
+            <div class="text-2xl mb-2 mt-2">
+                <span class="font-bold text-black">Population infected at some stage: {{percentageStats.totalInfected}}</span>
+            </div>
+            <div class="text-2xl mb-2 mt-2">
+                <span class="font-bold text-black">Population currently infected: {{percentageStats.currentlyInfected}}</span>
             </div>
         </div>
     </div>
@@ -50,9 +56,15 @@
         computed: {
             //calculate chance of fatality
             percentageStats: function() {
-                const rounded = (this.stats.TotalDeaths / this.stats.TotalConfirmed * 100).toFixed();
+                const deathRounded = (this.stats.TotalDeaths / this.stats.TotalConfirmed * 100).toFixed();
+                const totalInfected = ( this.stats.TotalConfirmed / 8000000000).toFixed();
+                const currentlyInfected = (this.stats.NewConfirmed / 8000000000).toFixed();
 
-                return rounded < 0 ? 'Less than 1%' : rounded + '%';
+                return {
+                    deathRounded: deathRounded <= 0 ? 'Less than 1%' : deathRounded + '%',
+                    totalInfected: totalInfected <= 0 ? 'Less than 1%' : totalInfected + '%',
+                    currentlyInfected: currentlyInfected <= 0 ? 'Less than 1%' : currentlyInfected + '%',
+                }
             }
         }
     }
