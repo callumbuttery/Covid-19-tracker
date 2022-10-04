@@ -1,6 +1,7 @@
 <template>
   <main v-if="!loading">
     <DataTitle :text="title" :dataDate="dataDate"/>
+    <DataBoxes :stats="stats"/>
   </main>
   <main v-else class="flex flex-col align-center justify center text-center">
     <img :src="loadingImage" class="w-35 mx-auto mt-10 mb-4" />
@@ -10,11 +11,13 @@
 
 <script>
 import DataTitle from '../components/DataTitle.vue';
+import DataBoxes from '../components/DataBoxes.vue';
 
 export default {
   name: "Home",
   components: {
-    DataTitle
+    DataTitle,
+    DataBoxes
   },
   data() {
     return {
